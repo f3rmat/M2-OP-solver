@@ -3,9 +3,151 @@ var ScrambleList = []; //array that stores the scramble
 var limit = 0;
 var size = 3; //length of edge of cube
 
-function solveCorners(corners){
+//function to check if two given arrays of the same length are the same or not
+function checkIfSame(firstArray, secondArray){
+	for(var i = 0; i < firstArray.length; i++){
+		if(firstArray[i] != secondArray[i]){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+var cornerSetup = [
+"", //A
+"R' D'", //B
+"F",//C
+"F R'", //D
+"", //E
+"F2", //F
+"D2 R", //G
+"D2", //H
+"F' D", //I
+"R2 D'", //J
+"D R", //K
+"D", //L
+"R'", //M
+"R2", //N
+"R", //O
+"", //P
+"R' F", //Q
+"", //R
+"D' R", //S
+"D'", //T
+"F'", //U
+"D' F'", //V
+"D2 F'", //W
+"D F'" //X
+];
+
+
+var intervtCornerSetup = [
+"", //A
+"D R", //B
+"F'",//C
+"R F'", //D
+"", //E
+"F2", //F
+"R' D2", //G
+"D2", //H
+"D' F", //I
+"D R2", //J
+"R' D'", //K
+"D'", //L
+"R", //M
+"R2", //N
+"R'", //O
+"", //P
+"F' R", //Q
+"", //R
+"R' D", //S
+"D", //T
+"F", //U
+"F D", //V
+"F D2", //W
+"F D'" //X
+];
+
+//Finds a location in the firstArray where the buffer piece can be shot
+//Uses a sequence of targets (via preference)
+//The preference goes like this: P(15), C(2), L(11), T(19), H(7), F(5), N(13) 
+function utilityToBreakCycleCorners(firstArray, secondArray){
+	var targetForCycleBreak = -1;
+	if(firstArray[15]!=secondArray[15]){
+		targetForCycleBreak = 15;
+	}
+
+	else if(firstArray[2]!=secondArray[2]){
+		targetForCycleBreak = 2;
+	}
+
+	else if(firstArray[11]!=secondArray[11]){
+		targetForCycleBreak = 11;
+	}
+
+	else if(firstArray[19]!=secondArray[19]){
+		targetForCycleBreak = 19;
+	}
+
+	else if(firstArray[7]!=secondArray[7]){
+		targetForCycleBreak = 7;
+	}
+
+	else if(firstArray[5]!=secondArray[5]){
+		targetForCycleBreak = 5;
+	}
+
+	else if(firstArray[13]!=secondArray[13]){
+		targetForCycleBreak = 13;
+	}
+
+	return targetForCycleBreak;
+}
+
+//function to solve corners 
+function solveCorners(currentCorners){
 	console.log("solving corners");
-	
+	var solvedCorners = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+						, "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
+
+	var numOfCornerSwaps = 0;
+	var buffer = currentCorners[0];
+	while(!checkIfSame(currentCorners, solvedCorners)){
+		numOfCornerSwaps++;
+		if(numOfCornerSwaps > 10){
+			break;
+		}
+		console.log("Number of swaps is: " + numOfCornerSwaps);
+		//cycle break case
+		if(currentCorners[0] == "A" || currentCorners[0] == "E" || currentCorners[0] == "R"){
+			console.log("inside if " + toBeShotLocation);
+			var targetForCycleBreak = utilityToBreakCycleCorners(currentCorners, solvedCorners);
+			var temp = currentCorners[0];
+			currentCorners[0] = currentCorners[targetForCycleBreak];
+			currentCorners[targetForCycleBreak] = temp;
+			console.log("Shooting corner target ");
+			var algorithm = cornerSetup[targetForCycleBreak] + " Y Perm " 
+							+ intervtCornerSetup[targetForCycleBreak];
+			console.log(algorithm);
+		}
+
+		//non cycle break case
+		else{
+			buffer = currentCorners[0];
+			var toBeShotLocation = buffer.charCodeAt(0) - 65;
+			console.log("inside else " + toBeShotLocation);
+			//swap 0 and toBeShotLocation in currentCorners array
+			var temp = currentCorners[0];
+			currentCorners[0] = currentCorners[toBeShotLocation];
+			currentCorners[toBeShotLocation] = temp;
+
+			console.log("Shooting corner target ");
+			var algorithm = cornerSetup[toBeShotLocation] + " Y Perm " 
+							+ intervtCornerSetup[toBeShotLocation];
+			console.log(algorithm);
+
+		}
+	}
 }
 
 function solveEdges(){
