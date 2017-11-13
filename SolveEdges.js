@@ -28,23 +28,23 @@ var edgeSetup = [
 
 var invertEdgeSetup = [
 "", //A
-"U R' U' R ", //B
+" U R' U' R ", //B
 "",//C Special Case
-"U' L U L' ", //D
-"B L' B' ", //E
-"B L2 B' ", //F
-"B L' B' ", //G
-"Uw L Uw' ", //H
+" U' L U L' ", //D
+" B L' B' ", //E
+" B L2 B' ", //F
+" B L' B' ", //G
+" Uw L Uw' ", //H
 "", //I Special Case
-"U' R' U ", //J
+" U' R' U ", //J
 "", //K Special Case
-"U L U' ", //L
-"B R' B' ", //M
-"Uw' R' Uw ", //N
-"B R B' ", //O
-"B R2 B'", //P
-"Uw R' Uw' U R' U' ", //Q
-"U L' U' ", //R
+" U L U' ", //L
+" B R' B' ", //M
+" Uw' R' Uw ", //N
+" B R B' ", //O
+" B R2 B'", //P
+" Uw R' Uw' U R' U' ", //Q
+" U L' U' ", //R
 "", //S Special Case
 "U' R U ", //T
 "", //U Special Case
@@ -85,7 +85,11 @@ function getAlternateTarget(target) {
 //Uses a sequence of targets (via preference) 
 function utilityToBreakCycleEdges(firstArray, secondArray){
 	var targetForCycleBreak = -1;
-	if(firstArray[9]!=secondArray[9]){
+	if(firstArray[0]!=secondArray[0]){
+		targetForCycleBreak = 0;
+	}
+
+	else if(firstArray[9]!=secondArray[9]){
 		targetForCycleBreak = 9;
 	}
 
@@ -101,8 +105,8 @@ function utilityToBreakCycleEdges(firstArray, secondArray){
 		targetForCycleBreak = 17;
 	}
 
-	else if(firstArray[22]!=secondArray[22]){
-		targetForCycleBreak = 22;
+	else if(firstArray[21]!=secondArray[21]){
+		targetForCycleBreak = 21;
 	}
 
 	else if(firstArray[23]!=secondArray[23]){
