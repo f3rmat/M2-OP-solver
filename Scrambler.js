@@ -3,11 +3,6 @@ var ScrambleList = []; //array that stores the scramble
 var limit = 0;
 var size = 3; //length of edge of cube
 
-
-function solveEdges(){
-	//console.log("in edges");
-}
-
 /*
 	cycles corners in case of 90 degree rotation of face 
 	does 90 degree cycling if param == 1
@@ -430,8 +425,22 @@ function applyScramble(list){
 	corners[20] = bottom[0][0];corners[21] = bottom[0][2];
 	corners[22] = bottom[2][2];corners[23] = bottom[2][0];
 
+	var edges = new Array(24);
+	edges[0] = top[0][1]; edges[1] = top[1][2];
+	edges[2] = top[2][1]; edges[3] = top[1][0];
+	edges[4] = left[0][1]; edges[5] = left[1][2];
+	edges[6] = left[2][1]; edges[7] = left[1][0];
+	edges[8] = front[0][1]; edges[9] = front[1][2];
+	edges[10] = front[2][1]; edges[11] = front[1][0];
+	edges[12] = right[0][1]; edges[13] = right[1][2];
+	edges[14] = right[2][1]; edges[15] = right[1][0];
+	edges[16] = back[0][1]; edges[17] = back[1][2];
+	edges[18] = back[2][1]; edges[19] = back[1][0];
+	edges[4] = bottom[0][1]; edges[5] = bottom[1][2];
+	edges[6] = bottom[2][1]; edges[7] = bottom[1][0];
+
 	solveCorners(corners);
-	solveEdges();
+	solveEdges(edges);
 }
 
 function appendMoves( sq, axsl, tl, la ){
