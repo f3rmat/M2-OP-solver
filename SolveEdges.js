@@ -130,6 +130,7 @@ function utilityToBreakCycleEdges(firstArray, secondArray){
 
 function swapStickersEdges(currentEdges, targetSticker){
 	var temp;
+
 	//The Edge with A sticker
 	if(targetSticker == 0){
 		temp = currentEdges[20];
@@ -339,6 +340,14 @@ function swapStickersEdges(currentEdges, targetSticker){
 		currentEdges[22] = temp;
 	}
 
+	//Will happen every time
+	temp = currentEdges[2];
+	currentEdges[2] = currentEdges[22];
+	currentEdges[22] = temp;
+	temp = currentEdges[18];
+	currentEdges[18] = currentEdges[8];
+	currentEdges[8] = temp;
+
 }
 
 
@@ -427,7 +436,7 @@ function solveEdges(currentEdges){
 	document.getElementById("edges-memo").innerHTML = finalEdgesMemo;
 
 	console.log("This is the solution via M2: " + "\n");
-	var finalEdgesSolution = "Edgess Execution: <br>";
+	var finalEdgesSolution = "Edges Execution: <br>";
 	for(var i = 0; i < edgeSolution.length; i++){
 		console.log(edgeSolution[i]);
 		finalEdgesSolution = finalEdgesSolution + edgeSolution[i] + '<br>';
