@@ -436,8 +436,8 @@ function applyScramble(list){
 	edges[14] = right[2][1]; edges[15] = right[1][0];
 	edges[16] = back[0][1]; edges[17] = back[1][2];
 	edges[18] = back[2][1]; edges[19] = back[1][0];
-	edges[4] = bottom[0][1]; edges[5] = bottom[1][2];
-	edges[6] = bottom[2][1]; edges[7] = bottom[1][0];
+	edges[20] = bottom[0][1]; edges[21] = bottom[1][2];
+	edges[22] = bottom[2][1]; edges[23] = bottom[1][0];
 
 	solveCorners(corners);
 	solveEdges(edges);

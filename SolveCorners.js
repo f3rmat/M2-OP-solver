@@ -38,7 +38,7 @@ var cornerSetup = [
 ];
 
 
-var intervtCornerSetup = [
+var invertCornerSetup = [
 "", //A
 " D R'", //B
 " F'",//C
@@ -397,7 +397,7 @@ function solveCorners(currentCorners){
 
 			//console.log("Shooting corner target ");
 			var algorithm = cornerSetup[targetForCycleBreak] + "Y Perm" 
-							+ intervtCornerSetup[targetForCycleBreak];
+							+ invertCornerSetup[targetForCycleBreak];
 			cornerSolution.push(algorithm);
 			//console.log(algorithm);
 		}
@@ -417,7 +417,7 @@ function solveCorners(currentCorners){
 
 			//console.log("Shooting corner target ");
 			var algorithm = cornerSetup[toBeShotLocation] + "Y Perm" 
-							+ intervtCornerSetup[toBeShotLocation];
+							+ invertCornerSetup[toBeShotLocation];
 			cornerSolution.push(algorithm);
 			//console.log(algorithm);
 
