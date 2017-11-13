@@ -380,9 +380,6 @@ function solveCorners(currentCorners){
 	var buffer = currentCorners[0];
 	while(!checkIfSame(currentCorners, solvedCorners)){
 		numOfCornerSwaps++;
-		if(numOfCornerSwaps > 10){
-			break;
-		}
 		//console.log("Number of swaps is: " + numOfCornerSwaps);
 		//cycle break case
 		if(currentCorners[0] == "A" || currentCorners[0] == "E" || currentCorners[0] == "R"){
