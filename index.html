@@ -13,15 +13,15 @@ text-align:center;
 #corners-wrapper {
 width: 48%;
 font-size: 20px;	
-display: inline-block;
-height: 300px;	
+float: left;
+height: 350px;
 margin-top: 30px;
 }
 #edges-wrapper{
 width: 48%;
 font-size: 20px;	
 display: inline-block;
-height: 300px;
+height: 350px;
 margin-top: 30px;
 }
 #corners-memo{
@@ -52,18 +52,18 @@ margin-top: 30px;
 	<div id="maindiv" autofocus>
 		Press Space
 	</div>
-	<div id="corners-wrapper">
-		<div id="corners-memo">
+		<div id="corners-wrapper">
+			<div id="corners-memo">
+			</div>
+			<div id="corners-solution">
+			</div>
 		</div>
-		<div id="corners-solution">
+		<div id="edges-wrapper">
+			<div id="edges-memo">
+			</div>
+			<div id="edges-solution">
+			</div>
 		</div>
-	</div>
-	<div id="edges-wrapper">
-		<div id="edges-memo">
-		</div>
-		<div id="edges-solution">
-		</div>
-	</div>
 </body>
 <script type="text/javascript">
 document.body.onkeyup = function(e){
