@@ -16,6 +16,16 @@ var LetterPair = ["test",
 "Doll", "Doom", "Donut", "Dope", "Diaper", "Disqualified", "Dragon", "Dinosaur", "Dart", " Dunkin doughnuts",
 "Darth Vader", "Dwarf", "Ducks",
 
+"Eagle", "Eyeball", "Eclairs", "Ed Sheeran", "Eel", "Elephant", "Egg", "Eh?", "Einstein", "Eject",
+"Ekans", "L (Death Note)", "Eminem", "Envelope", "Edge Orientation", "Edge Parity", "Earthquake",
+"Emergency Room", "Eskimo", "Eating", "Europe", "Eevee", "Eeeeeew!", "Ex",
 
+"Fat", "Facebook", "Face", "Food", "Ferret", "Firefighter", "Frog", "Fish", "Fight", "Fudge",
+"Fork", "Flood", "Foam", "Fan", "Foil", "Flappy(Bird)", "FAQ", "Fridge", "Fangshi", "Foot",
+"Fun", "Five", "Flower", "Fax",
+
+"Gargoyle", "Gameboy", "Gold crown", "Godzilla", "Genie", "Girlfriend", "Goggles", "Ghost",
+"Ginny", "Grape juice", "Goku", "Glass", "Gum", "Gun", "Gorilla", "Gap", "GQ magazine", "Grass", "Gas",
+"Goat", "Guitar", "Gravel", "George Washington", "Global Xpress",
 
 ];
