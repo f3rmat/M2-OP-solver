@@ -15,7 +15,7 @@ var edgeSetup = [
 "Uw R Uw' ", //N
 "B' R' B ", //O
 "B' R2 B ", //P
-"U R U' Uw R Uw'", //Q
+"U R U' Uw R Uw' ", //Q
 "U' L U ", //R
 "M2 D U R2 U' M' U R2 U' M D'", //S Special Case
 "U R' U' ", //T
@@ -46,11 +46,11 @@ var invertEdgeSetup = [
 " Uw R' Uw' U R' U' ", //Q
 " U' L' U ", //R
 "", //S Special Case
-"U R U' ", //T
+" U R U' ", //T
 "", //U Special Case
-"U R2 U' ", //V
+" U R2 U' ", //V
 "", //W Special Case
-"U' L2 U " //X
+" U' L2 U " //X
 ];
 
 function isOddSwapTarget(target){
@@ -150,220 +150,128 @@ function swapStickersEdges(currentEdges, targetSticker){
 
 	//The Edge with A sticker
 	if(targetSticker == 0){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[16];
-		currentEdges[16] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[16]] = [currentEdges[16], currentEdges[10]];
 	}
 
 	else if(targetSticker == 16){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[0];
-		currentEdges[0] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[0]] = [currentEdges[0], currentEdges[10]];
 	}
 
 	//The Edge with J sticker
 	else if(targetSticker == 9){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[15];
-		currentEdges[15] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[15]] = [currentEdges[15], currentEdges[10]];
 	}
 
 	else if(targetSticker == 15){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[9];
-		currentEdges[9] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[9]] = [currentEdges[9], currentEdges[10]];
 	}
 
 	//The Edge with L sticker
 	else if(targetSticker == 11){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[5];
-		currentEdges[5] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[5]] = [currentEdges[5], currentEdges[10]];
 	}
 
 	else if(targetSticker == 5){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[11];
-		currentEdges[11] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[11]] = [currentEdges[11], currentEdges[10]];
 	}
 
 	//The Edge with T sticker
 	else if(targetSticker == 19){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[13];
-		currentEdges[13] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[13]] = [currentEdges[13], currentEdges[10]];
 	}
 
 	else if(targetSticker == 13){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[19];
-		currentEdges[19] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[19]] = [currentEdges[19], currentEdges[10]];
 	}
 
 	//The Edge with R sticker
 	else if(targetSticker == 17){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[7];
-		currentEdges[7] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[7]] = [currentEdges[7], currentEdges[10]];
 	}
 
 	else if(targetSticker == 7){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[17];
-		currentEdges[17] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[17]] = [currentEdges[17], currentEdges[10]];
 	}
 
 	//The Edge with V sticker
 	else if(targetSticker == 21){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[14];
-		currentEdges[14] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[14]] = [currentEdges[14], currentEdges[10]];
 	}
 
 	else if(targetSticker == 14){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[21];
-		currentEdges[21] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[21]] = [currentEdges[21], currentEdges[10]];
 	}
 
 	//The Edge with X sticker
 	else if(targetSticker == 23){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[6];
-		currentEdges[6] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[6]] = [currentEdges[6], currentEdges[10]];
 	}
 
 	else if(targetSticker == 6){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[23];
-		currentEdges[23] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[23]] = [currentEdges[23], currentEdges[10]];
 	}
 
 	//The Edge with B sticker
 	else if(targetSticker == 1){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[12];
-		currentEdges[12] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[12]] = [currentEdges[12], currentEdges[10]];
 	}
 
 	else if(targetSticker == 12){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[1];
-		currentEdges[1] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[1]] = [currentEdges[1], currentEdges[10]];
 	}
 
 	//The Edge with D sticker
 	else if(targetSticker == 3){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[4];
-		currentEdges[4] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[4]] = [currentEdges[4], currentEdges[10]];
 	}
 
 	else if(targetSticker == 4){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[3];
-		currentEdges[3] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[3]] = [currentEdges[3], currentEdges[10]];
 	}
 
 	//The Edge with C sticker
 	else if(targetSticker == 2){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[8];
-		currentEdges[8] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[8]] = [currentEdges[8], currentEdges[10]];
 	}
 
 	else if(targetSticker == 8){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[2];
-		currentEdges[2] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[2]] = [currentEdges[2], currentEdges[10]];
 	}
 
 	//The Edge with W sticker
 	else if(targetSticker == 22){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[18];
-		currentEdges[18] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[18]] = [currentEdges[18], currentEdges[10]];
 	}
 
 	else if(targetSticker == 18){
-		temp = currentEdges[20];
-		currentEdges[20] = currentEdges[targetSticker];
-		currentEdges[targetSticker] = temp;
-		temp = currentEdges[10];
-		currentEdges[10] = currentEdges[22];
-		currentEdges[22] = temp;
+		[currentEdges[targetSticker], currentEdges[20]] = [currentEdges[20], currentEdges[targetSticker]];
+		[currentEdges[10], currentEdges[22]] = [currentEdges[22], currentEdges[10]];
 	}
 
 	//Will happen every time
-	temp = currentEdges[2];
-	currentEdges[2] = currentEdges[22];
-	currentEdges[22] = temp;
-	temp = currentEdges[18];
-	currentEdges[18] = currentEdges[8];
-	currentEdges[8] = temp;
+	[currentEdges[2], currentEdges[22]] = [currentEdges[22], currentEdges[2]];
+	[currentEdges[8], currentEdges[18]] = [currentEdges[18], currentEdges[8]];
 
 }
 
@@ -373,17 +281,10 @@ function paritySolvedCase(firstArray, secondArray){
 	for(var i = 0; i < firstArray.length; i++){
 		auxArray[i] = firstArray[i];
 	}
-
-	var temp = auxArray[2]
-	auxArray[2] = auxArray[22];
-	auxArray[22] = temp;
-
-	temp = auxArray[8]
-	auxArray[8] = auxArray[18];
-	auxArray[18] = temp;
+	[auxArray[2], auxArray[22]] = [auxArray[22], auxArray[2]]; 
+	[auxArray[8], auxArray[18]] = [auxArray[18], auxArray[8]]; 
 
 	return checkIfSame(auxArray, secondArray);
-
 }
 
 
