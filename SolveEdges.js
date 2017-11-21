@@ -36,21 +36,21 @@ var invertEdgeSetup = [
 " B L' B' ", //G
 " Uw L Uw' ", //H
 "", //I Special Case
-" U' R' U ", //J
+" U R' U' ", //J
 "", //K Special Case
-" U L U' ", //L
-" B R' B' ", //M
-" Uw' R' Uw ", //N
-" B R B' ", //O
-" B R2 B'", //P
+" U' L U ", //L
+" B' R' B ", //M
+" Uw R' Uw' ", //N
+" B' R B ", //O
+" B' R2 B", //P
 " Uw R' Uw' U R' U' ", //Q
-" U L' U' ", //R
+" U' L' U ", //R
 "", //S Special Case
-"U' R U ", //T
+"U R U' ", //T
 "", //U Special Case
-"U' R2 U ", //V
+"U R2 U' ", //V
 "", //W Special Case
-"U L2 U' " //X
+"U' L2 U " //X
 ];
 
 function isOddSwapTarget(target){

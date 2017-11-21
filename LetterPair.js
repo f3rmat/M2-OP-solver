@@ -1,7 +1,7 @@
 var LetterPair = ["test", 
 "Aardvark", "Abs", "Airconditioniner", "Advertisement", "Aeroplane", "Air Force", "Alligator",
 "Adolf Hitler", "Artificial Intelligence", "Angelina Jolie", "AK-47", "Alien", "Ambulance",
-"Ant", "Aosu", "Apple", "Aqua", "Arrow", "Astronaut", "Atlas", "Automobile", "Avenue", "AWake",
+"Ant", "Aosu", "Apple", "Aqua", "Arrow", "Astronaut", "Atlas", "Automobile", "Average", "AWake",
 "Axe",
 
 "Batman", "Basketball", "Bicycle", "Bed", "Bee", "Boyfriend", "Badge", "Beehive", "Bird", "Bad Job",
