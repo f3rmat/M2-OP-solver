@@ -367,8 +367,7 @@ function solveEdges(currentEdges){
 
 	while(!checkIfSame(currentEdges, solvedEdges)){
 		numOfEdgeSwaps++;
-		if(numOfEdgeSwaps > 15)
-			break;
+		
 		//Need to break into a new cycle
 		if(currentEdges[20] == "K" || currentEdges[20] == "U"){
 			var targetForCycleBreak = utilityToBreakCycleEdges(currentEdges, solvedEdges);
