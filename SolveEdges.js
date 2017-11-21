@@ -1,7 +1,7 @@
 var edgeSetup = [
 "", //A
 "R' U R U' ", //B
-"M U2 M U2 ",//C Special Case
+"U2 M' U2 M' ",//C Special Case
 "L U' L' U ", //D
 "B L' B' ", //E
 "B L2 B' ", //F
@@ -21,7 +21,7 @@ var edgeSetup = [
 "U R' U' ", //T
 "", //U Special Case
 "U R2 U' ", //V
-"U2 M' U2 M'", //W Special Case
+"M U2 M U2", //W Special Case
 "U' L2 U " //X
 ];
 
@@ -83,7 +83,7 @@ function getAlternateTarget(target) {
 
 //Finds a location in the firstArray where the buffer piece can be shot
 //Uses a sequence of targets (via preference) 
-function utilityToBreakCycleEdges(firstArray, secondArray){
+function utilityToBreakCycleEdges(firstArray, secondArray, parity){
 	var targetForCycleBreak = -1;
 	if(firstArray[0]!=secondArray[0]){
 		targetForCycleBreak = 0;
@@ -121,13 +121,26 @@ function utilityToBreakCycleEdges(firstArray, secondArray){
 		targetForCycleBreak = 3;
 	}
 
-	else if(firstArray[2]!=secondArray[2]){
-		targetForCycleBreak = 2;
+	else if(parity == 0){
+		if(firstArray[2]!=secondArray[22]){
+		targetForCycleBreak = 22;
+			}
+
+		else if(firstArray[22]!=secondArray[2]){
+			targetForCycleBreak = 2;
+		}	
 	}
 
-	else if(firstArray[22]!=secondArray[22]){
-		targetForCycleBreak = 22;
+	else{
+		if(firstArray[2]!=secondArray[2]){
+		targetForCycleBreak = 2;
+			}
+
+		else if(firstArray[22]!=secondArray[22]){
+			targetForCycleBreak = 22;
+		}	
 	}
+	
 	console.log("am inside utility " + targetForCycleBreak);
 	return targetForCycleBreak;
 }
@@ -355,6 +368,25 @@ function swapStickersEdges(currentEdges, targetSticker){
 }
 
 
+function paritySolvedCase(firstArray, secondArray){
+	var auxArray = [];
+	for(var i = 0; i < firstArray.length; i++){
+		auxArray[i] = firstArray[i];
+	}
+
+	var temp = auxArray[2]
+	auxArray[2] = auxArray[22];
+	auxArray[22] = temp;
+
+	temp = auxArray[8]
+	auxArray[8] = auxArray[18];
+	auxArray[18] = temp;
+
+	return checkIfSame(auxArray, secondArray);
+
+}
+
+
 
 function solveEdges(currentEdges){
 	var solvedEdges = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
@@ -365,22 +397,27 @@ function solveEdges(currentEdges){
 	var edgeSolution = [];
 	var buffer;
 
-	while(!checkIfSame(currentEdges, solvedEdges)){
+	while(!checkIfSame(currentEdges, solvedEdges) && !paritySolvedCase(currentEdges, solvedEdges)){
 		numOfEdgeSwaps++;
-		
+		if(numOfEdgeSwaps > 50){
+			alert("number of edge swaps error");
+			break;
+		}
 		//Need to break into a new cycle
 		if(currentEdges[20] == "K" || currentEdges[20] == "U"){
-			var targetForCycleBreak = utilityToBreakCycleEdges(currentEdges, solvedEdges);
+			var targetForCycleBreak;
 			var algorithm;
 			console.log("inside if " + targetForCycleBreak);
 			if(numOfEdgeSwaps % 2 == 0 && (isOddSwapTarget(targetForCycleBreak))){
+				targetForCycleBreak = utilityToBreakCycleEdges(currentEdges, solvedEdges, 0);
 				console.log("inside if inside if");
 				var alternateTarget = getAlternateTarget(targetForCycleBreak);
-				edgeMemo.push(solvedEdges[alternateTarget]);
+				edgeMemo.push(solvedEdges[targetForCycleBreak]);
 				swapStickersEdges(currentEdges, alternateTarget);
 				algorithm = edgeSetup[alternateTarget];
 			}
 			else{
+				targetForCycleBreak = utilityToBreakCycleEdges(currentEdges, solvedEdges, 1);
 				console.log("inside if inside else");
 				edgeMemo.push(solvedEdges[targetForCycleBreak]);
 				swapStickersEdges(currentEdges, targetForCycleBreak);
@@ -403,7 +440,7 @@ function solveEdges(currentEdges){
 			if(numOfEdgeSwaps % 2 == 0 && (isOddSwapTarget(toBeShotLocation))){
 				console.log("inside else inside if");
 				var alternateTarget = getAlternateTarget(toBeShotLocation);
-				edgeMemo.push(solvedEdges[alternateTarget]);
+				edgeMemo.push(solvedEdges[toBeShotLocation]);
 				swapStickersEdges(currentEdges, alternateTarget);
 				algorithm = edgeSetup[alternateTarget];
 			}
@@ -446,3 +483,6 @@ function solveEdges(currentEdges){
 	}
 	document.getElementById("edges-solution").innerHTML = finalEdgesSolution;
 }
+
+//scrambles to test this on:
+//B' F' R2 B F R B2 R' U R' D' B' F U R2 B R D2 L F2 
