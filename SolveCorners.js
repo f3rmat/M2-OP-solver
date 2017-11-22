@@ -108,261 +108,137 @@ function swapStickersCorners(currentCorners, targetSticker){
 	var temp;
 	//The corner with B sticker
 	if(targetSticker == 1){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[16];
-		currentCorners[16] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[13];
-		currentCorners[13] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[16]] = [currentCorners[16],currentCorners[4]];
+		[currentCorners[17],currentCorners[13]] = [currentCorners[13],currentCorners[17]];
+
 	}
 
 	else if(targetSticker == 16){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[13];
-		currentCorners[13] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[1];
-		currentCorners[1] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[13]] = [currentCorners[13],currentCorners[4]];
+		[currentCorners[17],currentCorners[1]] = [currentCorners[1],currentCorners[17]];
+
 	}
 
 	else if(targetSticker == 13){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[1];
-		currentCorners[1] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[16];
-		currentCorners[16] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[1]] = [currentCorners[1],currentCorners[4]];
+		[currentCorners[17],currentCorners[16]] = [currentCorners[16],currentCorners[17]];
 	}
 
 	//The corner with C sticker
 	else if(targetSticker == 2){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[12];
-		currentCorners[12] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[9];
-		currentCorners[9] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[12]] = [currentCorners[12],currentCorners[4]];
+		[currentCorners[17],currentCorners[9]] = [currentCorners[9],currentCorners[17]];
 	}
 
 	else if(targetSticker == 12){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[9];
-		currentCorners[9] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[2];
-		currentCorners[2] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[9]] = [currentCorners[9],currentCorners[4]];
+		[currentCorners[17],currentCorners[2]] = [currentCorners[2],currentCorners[17]];
 	}
 
 	else if(targetSticker == 9){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[2];
-		currentCorners[2] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[12];
-		currentCorners[12] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[2]] = [currentCorners[2],currentCorners[4]];
+		[currentCorners[17],currentCorners[12]] = [currentCorners[12],currentCorners[17]];
 	}
 	
 	//The corner with D sticker
 	else if(targetSticker == 3){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[8];
-		currentCorners[8] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[5];
-		currentCorners[5] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[8]] = [currentCorners[8],currentCorners[4]];
+		[currentCorners[17],currentCorners[5]] = [currentCorners[5],currentCorners[17]];
 	}
 
 	else if(targetSticker == 8){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[5];
-		currentCorners[5] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[3];
-		currentCorners[3] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[5]] = [currentCorners[5],currentCorners[4]];
+		[currentCorners[17],currentCorners[3]] = [currentCorners[3],currentCorners[17]];
 	}
 
 	else if(targetSticker == 5){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[3];
-		currentCorners[3] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[8];
-		currentCorners[8] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[3]] = [currentCorners[3],currentCorners[4]];
+		[currentCorners[17],currentCorners[8]] = [currentCorners[8],currentCorners[17]];
 	}
 
 	//The corner with P sticker
 	else if(targetSticker == 15){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[21];
-		currentCorners[21] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[10];
-		currentCorners[10] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[21]] = [currentCorners[21],currentCorners[4]];
+		[currentCorners[17],currentCorners[10]] = [currentCorners[10],currentCorners[17]];
 	}
 
 	else if(targetSticker == 21){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[10];
-		currentCorners[10] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[15];
-		currentCorners[15] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[10]] = [currentCorners[10],currentCorners[4]];
+		[currentCorners[17],currentCorners[15]] = [currentCorners[15],currentCorners[17]];
 	}
 
 	else if(targetSticker == 10){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[15];
-		currentCorners[15] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[21];
-		currentCorners[21] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[15]] = [currentCorners[15],currentCorners[4]];
+		[currentCorners[17],currentCorners[21]] = [currentCorners[21],currentCorners[17]];
 	}
 
 	//The corner with L sticker
 	else if(targetSticker == 11){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[20];
-		currentCorners[20] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[6];
-		currentCorners[6] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[20]] = [currentCorners[20],currentCorners[4]];
+		[currentCorners[17],currentCorners[6]] = [currentCorners[6],currentCorners[17]];
 	}
 
 	else if(targetSticker == 20){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[6];
-		currentCorners[6] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[11];
-		currentCorners[11] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[6]] = [currentCorners[6],currentCorners[4]];
+		[currentCorners[17],currentCorners[11]] = [currentCorners[11],currentCorners[17]];
 	}
 
 	else if(targetSticker == 6){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[11];
-		currentCorners[11] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[20];
-		currentCorners[20] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[11]] = [currentCorners[11],currentCorners[4]];
+		[currentCorners[17],currentCorners[20]] = [currentCorners[20],currentCorners[17]];
 	}
 
 	//The corner with H sticker
 	else if(targetSticker == 7){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[23];
-		currentCorners[23] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[18];
-		currentCorners[18] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[23]] = [currentCorners[23],currentCorners[4]];
+		[currentCorners[17],currentCorners[18]] = [currentCorners[18],currentCorners[17]];
 	}
 
 	else if(targetSticker == 23){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[18];
-		currentCorners[18] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[7];
-		currentCorners[7] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[18]] = [currentCorners[18],currentCorners[4]];
+		[currentCorners[17],currentCorners[7]] = [currentCorners[7],currentCorners[17]];
 	}
 
 	else if(targetSticker == 18){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[7];
-		currentCorners[7] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[23];
-		currentCorners[23] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[7]] = [currentCorners[7],currentCorners[4]];
+		[currentCorners[17],currentCorners[23]] = [currentCorners[23],currentCorners[17]];
 	}
 
 	//The corner with H sticker
 	else if(targetSticker == 19){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[22];
-		currentCorners[22] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[14];
-		currentCorners[14] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[22]] = [currentCorners[22],currentCorners[4]];
+		[currentCorners[17],currentCorners[14]] = [currentCorners[14],currentCorners[17]];
 	}
 
 	else if(targetSticker == 22){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[14];
-		currentCorners[14] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[19];
-		currentCorners[19] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[14]] = [currentCorners[14],currentCorners[4]];
+		[currentCorners[17],currentCorners[19]] = [currentCorners[19],currentCorners[17]];
 	}
 
 	else if(targetSticker == 14){
-		temp = currentCorners[0];
-		currentCorners[0] = currentCorners[targetSticker];
-		currentCorners[targetSticker] = temp;
-		temp = currentCorners[4];
-		currentCorners[4] = currentCorners[19];
-		currentCorners[19] = temp;
-		temp = currentCorners[17];
-		currentCorners[17] = currentCorners[22];
-		currentCorners[22] = temp;
+		[currentCorners[0],currentCorners[targetSticker]] = [currentCorners[targetSticker],currentCorners[0]];
+		[currentCorners[4],currentCorners[19]] = [currentCorners[19],currentCorners[4]];
+		[currentCorners[17],currentCorners[22]] = [currentCorners[22],currentCorners[17]];
 	}
 }
 
