@@ -86,11 +86,11 @@ function getAlternateTarget(target) {
 function utilityToBreakCycleEdges(firstArray, secondArray, parity){
 	var targetForCycleBreak = -1;
 	if(firstArray[0]!=secondArray[0] && parity == 0){
-		targetForCycleBreak = 0;
+		targetForCycleBreak = 16;
 	}
 
 	else if(firstArray[0]!=secondArray[0] && parity == 1){
-		targetForCycleBreak = 16;
+		targetForCycleBreak = 0;
 	}
 
 	else if(firstArray[9]!=secondArray[9]){
