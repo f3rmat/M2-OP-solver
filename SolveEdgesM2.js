@@ -302,7 +302,7 @@ function solveEdgesM2(currentEdgesM2){
 	var edgeSolutionM2 = [];
 	var buffer;
 
-	while(!checkIfSame(currentEdgesM2, solvedEdgesM2) && !paritySolvedCaseM2(currentEdgesM2, solvedEdges)){
+	while(!checkIfSame(currentEdgesM2, solvedEdgesM2) && !paritySolvedCaseM2(currentEdgesM2, solvedEdgesM2)){
 		numOfEdgeSwaps++;
 		if(numOfEdgeSwaps > 50){
 			alert("number of edge swaps error");
@@ -314,24 +314,24 @@ function solveEdgesM2(currentEdgesM2){
 			var algorithm;
 			console.log("inside if " + targetForCycleBreak);
 			if(numOfEdgeSwaps % 2 == 0 && (isOddSwapTargetM2(targetForCycleBreak))){
-				targetForCycleBreak = utilityToBreakCycleEdgesM2(currentEdgesM2, solvedEdges, 0);
+				targetForCycleBreak = utilityToBreakCycleEdgesM2(currentEdgesM2, solvedEdgesM2, 0);
 				console.log("inside if inside if");
 				var alternateTarget = getAlternateTargetM2(targetForCycleBreak);
-				edgeMemoM2.push(solvedEdges[targetForCycleBreak]);
+				edgeMemoM2.push(solvedEdgesM2[targetForCycleBreak]);
 				swapStickersEdgesM2(currentEdgesM2, alternateTarget);
-				algorithm = edgeSetup[alternateTarget];
+				algorithm = edgeSetupM2[alternateTarget];
 			}
 			else{
-				targetForCycleBreak = utilityToBreakCycleEdgesM2(currentEdgesM2, solvedEdges, 1);
+				targetForCycleBreak = utilityToBreakCycleEdgesM2(currentEdgesM2, solvedEdgesM2, 1);
 				console.log("inside if inside else");
-				edgeMemoM2.push(solvedEdges[targetForCycleBreak]);
+				edgeMemoM2.push(solvedEdgesM2[targetForCycleBreak]);
 				swapStickersEdgesM2(currentEdgesM2, targetForCycleBreak);
 				if(isOddSwapTargetM2(targetForCycleBreak)){
-					algorithm = edgeSetup[targetForCycleBreak];	
+					algorithm = edgeSetupM2[targetForCycleBreak];	
 				}
 				else{
 					algorithm = edgeSetupM2[targetForCycleBreak] + "M2" 
-							+ invertEdgeSetup[targetForCycleBreak];
+							+ invertEdgeSetupM2[targetForCycleBreak];
 				}
 			}
 			edgeSolutionM2.push(algorithm);
@@ -351,14 +351,14 @@ function solveEdgesM2(currentEdgesM2){
 			}
 			else{
 				console.log("inside else inside else");
-				edgeMemoM2.push(solvedEdges[toBeShotLocation]);
+				edgeMemoM2.push(solvedEdgesM2[toBeShotLocation]);
 				swapStickersEdgesM2(currentEdgesM2, toBeShotLocation);
 				if(isOddSwapTargetM2(toBeShotLocation)){
-					algorithm = edgeSetup[toBeShotLocation];	
+					algorithm = edgeSetupM2[toBeShotLocation];	
 				}
 				else{
-					algorithm = edgeSetup[toBeShotLocation] + "M2" 
-							+ invertEdgeSetup[toBeShotLocation];
+					algorithm = edgeSetupM2[toBeShotLocation] + "M2" 
+							+ invertEdgeSetupM2[toBeShotLocation];
 				}
 			}
 			edgeSolutionM2.push(algorithm);
