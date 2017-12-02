@@ -440,7 +440,7 @@ function applyScramble(list){
 	edges[22] = bottom[2][1]; edges[23] = bottom[1][0];
 
 	solveCorners(corners);
-	solveEdges(edges);
+	solveEdgesM2(edges);
 }
 
 function appendMoves( sq, axsl, tl, la ){
